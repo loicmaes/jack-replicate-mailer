@@ -10,7 +10,6 @@ class Client extends discord.Client {
     }
 
     start () {
-        require('../handlers/commands')(this)
         require('../handlers/events')(this)
 
         this.login(process.env.TOKEN).then(_ => console.log(`Logged in as ${this.user.tag}.`))

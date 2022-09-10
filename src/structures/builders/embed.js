@@ -27,6 +27,7 @@ class Embed {
         if (this.title) embed.setTitle(this.title)
         if (this.description) embed.setDescription(this.description)
         if (this.color) embed.setColor(this.color)
+        if (this.author) embed.setAuthor({ name: this.author.name, iconURL: this.author.iconURL, url: this.author.url })
         if (this.fields && this.fields.length !== 0) this.fields.forEach(field => embed.addField(field.name, field.value, field.inline || false))
         if (this.footer) embed.setFooter(this.footer)
         if (this.image) embed.setImage(this.image)

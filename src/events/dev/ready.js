@@ -12,8 +12,5 @@ module.exports = new Event({
             ],
             status: 'online'
         })
-
-        const devGuild = await client.guilds.cache.get(process.env.DEV_GUILD)
-        await devGuild.commands.set(client.commands.map(cmd => cmd))
     }
 })
