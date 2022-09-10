@@ -15,11 +15,8 @@ module.exports = new Event({
 
     const content = message.content
     const author = message.author
-    const files = message.attachments
+    const files = message.attachments.map((a, k) => a.attachment)
 
-    const attachments = []
-    files.forEach((a, k) => attachments.push(a.attachment))
-
-    await targetChannel.send({ content: `*Message de **${author.tag}***\n~~                                                       ~~\n${content}`, files: attachments })
+    await targetChannel.send({ content: `*Message de **${author.tag}***\n~~                                                       ~~\n${content}`, files })
   }
 })
